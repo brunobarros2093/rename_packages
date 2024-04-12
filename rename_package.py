@@ -1,13 +1,13 @@
 import os
 import re
 
-def rename_package(path, old_package_name, new_package_name):
+def rename_packages(path, old_packages, new_package_name, package_description=None):
     """
     Renomeia o nome do pacote em várias classes Java encontradas no diretório especificado.
 
     Args:
         path (str): O caminho para o diretório contendo as classes Java.
-        old_package_name (str): O nome do pacote antigo a ser substituído.
+        old_packages (list): Uma lista de nomes de pacotes antigos a serem substituídos.
         new_package_name (str): O novo nome do pacote.
         package_description (str, opcional): Uma descrição para adicionar acima da declaração de pacote nas classes Java. Padrão é None.
 
@@ -31,8 +31,8 @@ def rename_package(path, old_package_name, new_package_name):
                 java_files.append(os.path.join(root, file))
 
     # Expressões regulares para encontrar importações e declarações de pacotes
-    import_regex = re.compile(r'import\s+' + re.escape(old_package_name) + r'\.')
-    package_regex = re.compile(r'package\s+' + re.escape(old_package_name) + r';')
+    import_regex = re.compile(r'import\s+(?:' + '|'.join(map(re.escape, old_packages)) + r')\.')
+    package_regex = re.compile(r'package\s+(?:' + '|'.join(map(re.escape, old_packages)) + r');')
 
     # Para cada arquivo Java, substitui o nome do pacote antigo pelo novo
     for java_file in java_files:
@@ -47,7 +47,10 @@ def rename_package(path, old_package_name, new_package_name):
         file_data = import_regex.sub('import ' + new_package_path + '.', file_data)
 
         # Substituir declarações de pacotes
-        file_data = package_regex.sub('package ' + new_package_path + ';', file_data)
+        package_declaration = 'package ' + new_package_path + ';'
+        if package_description:
+            package_declaration = '/**\n * ' + package_description + '\n */\n' + package_declaration
+        file_data = package_regex.sub(package_declaration, file_data)
 
         # Escrever de volta no arquivo
         with open(java_file, 'w') as file:
@@ -55,6 +58,5 @@ def rename_package(path, old_package_name, new_package_name):
 
     print("O nome do pacote foi alterado com sucesso em todas as classes Java.")
 
-# Exemplo de uso:
-# Não precisa adicionar a palavra 'package' ou 'import' no nome do pacote antigo e novo
-rename_package("/caminho/do/seu/projeto", "pacote.antigo", "pacote.novo")
+# Exemplo de uso
+rename_packages("C:\\Users\\brunog.barros\\IdeaProjects\\demo-ms-terminal\\demo\\src\\main\\java\\com\\ms\\terminal\\demo", ["br.com.sippe.acquirer.coordinator.terminal.integrations.repository", "br.com.sippe.acquirer.coordinator.terminal.integrations.model.ol","br.com.sippe.acquirer.coordinator.terminal.integrations.model.opaca","br.com.sippe.acquirer.coordinator.terminal.integrations.queue"," br.com.sippe.acquirer.coordinator.terminal.integrations.queue.enums","br.com.sippe.acquirer.coordinator.terminal.integrations.utils", "br.com.sippe.acquirer.coordinator.terminal.integrations.mapper"], "br.com.ms.terminal.demo", "Este é o novo pacote.")
