@@ -59,4 +59,4 @@ def rename_packages(path, old_packages, new_package_name, package_description=No
     print("O nome do pacote foi alterado com sucesso em todas as classes Java.")
 
 # Exemplo de uso
-rename_packages("C:\\Users\\brunog.barros\\IdeaProjects\\demo-ms-terminal\\demo\\src\\main\\java\\com\\ms\\terminal\\demo", ["br.com.sippe.acquirer.coordinator.terminal.integrations.repository", "br.com.sippe.acquirer.coordinator.terminal.integrations.model.ol","br.com.sippe.acquirer.coordinator.terminal.integrations.model.opaca","br.com.sippe.acquirer.coordinator.terminal.integrations.queue"," br.com.sippe.acquirer.coordinator.terminal.integrations.queue.enums","br.com.sippe.acquirer.coordinator.terminal.integrations.utils", "br.com.sippe.acquirer.coordinator.terminal.integrations.mapper"], "br.com.ms.terminal.demo", "Este é o novo pacote.")
+rename_packages("/caminho/do/seu/projeto", ["pacote.antigo1", "pacote.antigo2"], "pacote.novo", "Este é o novo pacote.")
