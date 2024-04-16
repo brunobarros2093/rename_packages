@@ -15,3 +15,12 @@ Renomeia o nome do pacote em várias classes Java encontradas no diretório espe
 
     Returns:
         None
+
+# Utilização [WIP]: 
+
+1. Alterar os parametros da função rename_package(), passando o endereço do seu projeto na pasta raiz SRC. Os paths a serem substituidos e o endereço novo. Pastas e subpastas serão adicionadas ao caminho, não é necessário ser específico no novo package path.
+
+Ex: 
+    rename_package("C:\\your\\path\\to\\java\\src", ["br.com.old.pack.dto", "br.com.old.pack.model"], "br.com.new", "descrição opcional"]
+
+2. Executar o ./rename_package.py: python3 ./rename_package.py or ./rename_package  
