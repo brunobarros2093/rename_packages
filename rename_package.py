@@ -59,4 +59,4 @@ def rename_packages(path, old_packages, new_package_name, package_description=No
     print("O nome do pacote foi alterado com sucesso em todas as classes Java.")
 
 # Exemplo de uso
-rename_packages("/caminho/do/seu/projeto", ["pacote.antigo1", "pacote.antigo2"], "pacote.novo", "Este é o novo pacote.")
+rename_packages("C:\\Users\\brunog.barros\\IdeaProjects\\demo-ms-terminal\\demo\\src\\main\\java\\com\\ms\\terminal\\demo", ["br.com.sippe.acquirer.coordinator.terminal.integrations.queue.enums","br.com.ms.terminal.demo.queue","br.com.ms.terminal.demo.utils","br.com.sippe.acquirer.coordinator.terminal.integrations.service.impl","br.com.ms.terminal.demo.api.dto.suportes","br.com.ms.terminal.demo.service", "br.com.ms.terminal.demo.model.ol", "br.com.ms.terminal.demo.model.opaca", "br.com.ms.terminal.demo.model.opaca", "br.com.ms.terminal.demo.model", "br.com.ms.terminal.demo.mapper", "br.com.ms.terminal.demo.config", "br.com.ms.terminal.demo.api.dto", "br.com.ms.terminal.demo.api"], "com.ms.terminal.demo", "Atualizado e criado por: Bruno Barros - 2024 brunog.barros@fornecedores.sicoob.com.br")

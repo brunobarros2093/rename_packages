@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9ad5b96d-61b9-4558-9ff9-a5fc7162c2a4" name="Changes" comment="" />
+    <list default="true" id="9ad5b96d-61b9-4558-9ff9-a5fc7162c2a4" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/rename_package.py" beforeDir="false" afterPath="$PROJECT_DIR$/rename_package.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2f0LGbOPPDKbr0hmjTmfQc3FQOT" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -19,6 +24,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/brunog.barros/IdeaProjects/demo-ms-terminal",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
@@ -40,7 +46,11 @@
       <option name="presentableId" value="Default" />
       <updated>1712933118934</updated>
       <workItem from="1712933124155" duration="11000" />
+      <workItem from="1713201921844" duration="332000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>
